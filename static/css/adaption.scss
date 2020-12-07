@@ -1,0 +1,23 @@
+.adaption {
+    display: flex;
+    .card {
+        text-align: center;
+        width: calc(100% / 2 - 100px);
+        margin: 100px;
+        height: 70vh;
+        background-color: white;
+        border-radius: 30px;
+        box-shadow: -3px -3px 7px #ffffffb2,
+            3px 3px 5px rgba(94, 104, 121, 0.945);
+        transition: 0.2s;
+        &:hover {
+            box-shadow: inset -3px -3px 7px #ffffffb0,
+                inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+            transition: 0.2s;
+        }
+        img {
+            width: 80%;
+            margin: 30px 10%;
+        }
+    }
+}

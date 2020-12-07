@@ -1,0 +1,31 @@
+{% load static %}
+{% load sass_tags %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}{% endblock %}
+        {% if isnt_title_bar %}
+        {% else %} | {% endif %}
+        Twitter抽選 - TwiChu
+    </title>
+    {% block head %}{% endblock %}
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <link rel="stylesheet" href="{% sass_src 'css/base.scss' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
+    {% include 'icon.html' %}
+</head>
+
+<body>
+    {% include 'header.html' %}
+    {% block content %}
+    {% endblock %}
+
+</body>
+<script>
+</script>
+
+</html>

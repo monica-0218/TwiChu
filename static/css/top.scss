@@ -1,0 +1,80 @@
+@import "variables";
+.wrapper-top {
+    position: relative;
+    background-color: $header-color;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    z-index: 1;
+    span {
+        z-index: -1;
+        position: absolute;
+        width: 190vw;
+        height: calc(400vh - 200px);
+        bottom: calc(- (200vh - 200px));
+        right: -100vw;
+        border-radius: 100%;
+        background-color: white;
+        pointer-events: none;
+    }
+}
+.top-left {
+    position: absolute;
+    top: 15vh;
+    left: 15vw;
+    &-logo {
+        width: 20vw;
+    }
+}
+.top-right {
+    position: absolute;
+    bottom: 15vh;
+    right: 4vw;
+    display: flex;
+    ul {
+        position: relative;
+        width: 15vw;
+        height: 20vh;
+    }
+    li {
+        font-size: 30px;
+        position: absolute;
+        height: 30px;
+        left: 0;
+        &:nth-child(2) {
+            left: -4.4vw;
+            top: 60px;
+        }
+        &:nth-child(3) {
+            left: -7vw;
+            top: 120px;
+        }
+        &:nth-child(4) {
+            left: -9.6vw;
+            top: 180px;
+        }
+    }
+    .button-outer {
+        position: relative;
+        width: 300px;
+        a {
+            text-decoration: none;
+            display: block;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+            outline: none;
+            border: none;
+            background-color: $header-color;
+            height: min-content;
+            width: min-content;
+            white-space: nowrap;
+            padding: 10px 60px;
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+            border-radius: 15px;
+            z-index: 999;
+        }
+    }
+}

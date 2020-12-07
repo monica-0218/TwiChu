@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% sass_src 'css/adaption.scss' %}">
+{% endblock %}
+{% block content %}
+<div class="wrapper">
+    <div class="adaption">
+        <div class="card">
+            <h1 class="customer"><span style="color: blue;">参加者</span>のかたはこちら</h1>
+            <img src="{% static 'images/customer.png' %}" alt="">
+        </div>
+        <div class="card">
+            <h1 class="server"><span style="color: red;">主催者</span>のかたはこちら</h1>
+            <img src="{% static 'images/server.png' %}" alt="">
+        </div>
+    </div>
+</div>
+{% endblock %}

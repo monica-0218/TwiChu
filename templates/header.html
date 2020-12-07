@@ -1,0 +1,24 @@
+{% load static %}
+<header class="header">
+    <div class="header-inner">
+        <a href="/">
+            <img src="{% static 'images/logo_transparent.png' %}" class="header-logo" alt="">
+            <div class="header-logo-text">
+                <div>Twichu</div>
+            </div>
+        </a>
+    </div>
+    <div class="header-inner">
+
+        <ul>
+            {% if user.is_authenticated %}
+            <li><a href="/accounts/logout">ログアウト</a></li>
+            {% else %}
+            <li><a href="/accounts/login">ログイン/登録</a></li>
+            {% endif %}
+            <li><a href="/home">HOME</a></li>
+            <li><a href="#">さがす</a></li>
+            <li><a href="#">使い方</a></li>
+        </ul>
+    </div>
+</header>

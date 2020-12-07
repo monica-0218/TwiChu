@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% sass_src 'css/top.scss' %}">
+{% endblock %}
+{% block content %}
+<div class="wrapper-top">
+    <span></span>
+    <div class="top-left">
+        <img src="{% static 'images/logo_transparent.png' %}" class="top-left-logo" alt="">
+    </div>
+    <div class="top-right">
+        <ul>
+            <li>無料で使える</li>
+            <li>当選発表のDM機能</li>
+            <li>Twitterとの連携が可能</li>
+            <li>誰でも簡単に投稿ができる</li>
+        </ul>
+        <div class="button-outer">
+
+            {% if user.is_authenticated %}
+            <a href="/home">始める</a>
+            {% else %}
+            <a href="/accounts/login">始める</a>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
