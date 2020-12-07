@@ -9,7 +9,6 @@
         </a>
     </div>
     <div class="header-inner">
-
         <ul>
             {% if user.is_authenticated %}
             <li><a href="/accounts/logout">ログアウト</a></li>
@@ -19,6 +18,15 @@
             <li><a href="/home">HOME</a></li>
             <li><a href="#">さがす</a></li>
             <li><a href="#">使い方</a></li>
+            {% if user.is_authenticated %}
+            {% if user.socialaccount_set.all.0.get_avatar_url %}
+            <li><a href="/user"><img class="header-user-icon" src="{{ user.socialaccount_set.all.0.get_avatar_url }}"
+                        alt="{{user.username}}"></a></li>
+            {% else %}
+            <li><a href="/user"><img class="header-user-icon" src="{% static 'images/nouser.png' %}"
+                        alt="{{user.username}}"></a></li>
+            {% endif %}
+            {% endif %}
         </ul>
     </div>
 </header>

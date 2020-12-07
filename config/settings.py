@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chusen.apps.ChusenConfig',
+    'user.apps.UserConfig',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -152,3 +153,5 @@ ACCOUNT_EMAIL_REQUIRED = False
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ROOT_URLCONF = 'config.urls'
+
+AUTH_USER_MODEL = 'user.CustomUser'

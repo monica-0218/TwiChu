@@ -54,5 +54,11 @@ header {
                 margin: auto;
             }
         }
+        &-user-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            border: 4px white solid;
+        }
     }
 }
