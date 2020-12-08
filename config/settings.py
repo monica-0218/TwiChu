@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.twitter',
     'sass_processor',
+    'taggit',
 ]
 
 MIDDLEWARE = [

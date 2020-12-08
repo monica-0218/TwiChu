@@ -2,8 +2,48 @@
 {% load sass_tags %}
 {% load static %}
 {% block head %}
+<link rel="stylesheet" href="{% sass_src 'css/home.scss' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
 {% endblock %}
 {% block content %}
 <div class="wrapper">
+    <h1 class="home-title">今日のおすすめ抽選</h1>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for post in Post_list %}
+            <div class="swiper-slide">
+                <img src="{{post.thumbnail.url}}" alt="{{post.title}}">
+                <span class="hover-title">{{post.title}}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <a href="#" class="fancy-button bg-gradient"><span>さがす</span></a>
 </div>
 {% endblock %}
+{% block js %}
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+            delay: 6000,
+            stopOnLastSlide: false,
+            disableOnInteraction: false,
+            reverseDirection: false
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        }
+    });
+</script>
+{% endblock%}
