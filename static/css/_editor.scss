@@ -1,0 +1,44 @@
+.editor {
+    width: 94%;
+    padding: 3%;
+    background-color: white;
+    border-radius: 20px;
+    .form-content {
+        padding: 20px 0;
+        border-bottom: 1px rgb(119, 119, 119) solid;
+        input[type="text"],
+        input[type="url"] {
+            width: 100%;
+            font-size: 25px;
+        }
+        input[type="checkbox"] {
+            width: 30px;
+            height: 30px;
+        }
+        input[type="date"] {
+            font-size: 20px;
+        }
+        #preview {
+            border: 2px silver solid;
+        }
+    }
+    .slider-outer {
+        display: flex;
+        .slider {
+            width: calc(100% / 3);
+            h4 {
+                margin: 0 0 0 20px;
+            }
+            .slider-inner {
+                display: flex;
+                position: relative;
+                input[type="range"] {
+                    width: 70%;
+                }
+                div {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+{% load static %}
+{% block title %}{{user.username}}さんの設定{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% sass_src 'css/user.scss' %}">
+<link rel="stylesheet" href="{% sass_src 'css/setting.scss' %}">
+{% endblock %}
+{% block content %}
+<div class="wrapper">
+    <h1>抽選を開始！</h1>
+    <hr>
+    <div></div>
+    <h1>抽選の作成・編集</h1>
+    <hr>
+    <div class="post-list">
+        <a class="post-link" href="">
+            <div class="post-card post-card-first">
+                <img class="post-card-img" src="{% static 'images/postcreate.jpg' %}">
+                <h3>新規作成</h3>
+                <p>ここから抽選を新規作成</p>
+            </div>
+        </a>
+        {% for post in Post_list %}
+        <a href="{% url 'chusen:postupdate' post.pk %}" class="post-link">
+            <div class="post-card">
+                <div class="post-card-category">〜 {{ post.ended_at | date:"m/j" }}</div>
+                <img class="post-card-img" src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+                <div class="post-card-inner">
+                    <h3>{{ post.title }}</h3>
+                </div>
+                <div class="post-card-date">{{ post.created_at | date:"Y m/j" }}</div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

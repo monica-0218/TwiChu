@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+{% load static %}
+{% block title %}抽選を探す{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% sass_src 'css/post.scss' %}">
+{% endblock %}
+{% block content %}
+<div class="wrapper">
+    <h1>投稿</h1>
+    <hr>
+    <div class="post-list">
+        {% for post in object_list %}
+        <a href="{% url 'chusen:postdetail' post.pk %}" class="post-link">
+            <div class="post-card">
+                <div class="post-card-category">〜 {{ post.ended_at | date:"m/j" }}</div>
+                <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+                <div class="post-card-inner">
+                    <h3>{{ post.title }}</h3>
+                </div>
+                <div class="post-card-server">{{ post.server }}</div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}
+{% block js %}
+{% endblock%}

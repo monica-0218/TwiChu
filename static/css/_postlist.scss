@@ -1,0 +1,91 @@
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    .post-link {
+        display: block;
+        width: calc((100% / 2) - 1%);
+        margin: 0.5%;
+        height: 120px;
+        color: black;
+        text-decoration: none;
+        .post-card {
+            position: relative;
+            background-color: white;
+            transition: 0.2s;
+            display: flex;
+            box-shadow: 5px 5px 7px #999999, -5px -5px 7px #ffffff;
+            &:hover {
+                transform: translateY(2px);
+                transition: 0.2s;
+            }
+            &-inner {
+                padding: 0 20px;
+                overflow: hidden;
+            }
+            &-category {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: orange;
+                color: white;
+                font-weight: bold;
+                padding: 3px;
+            }
+            &-server {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                font-weight: bold;
+                padding: 3px;
+            }
+            h3 {
+                margin: 10px 0;
+                text-align: center;
+                height: min-content;
+                width: 100%;
+            }
+            img {
+                width: 200px;
+                height: 120px;
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+.pagination-outer {
+    display: flex;
+    text-align: center;
+    .pagination {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+    ul {
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        background-color: white;
+        border-radius: 15px;
+        width: 80px;
+        white-space: nowrap;
+        a {
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 25px;
+            color: black;
+            text-decoration: none;
+        }
+        margin: 10px;
+    }
+    .active a {
+        color: #f5b203;
+        text-decoration: none;
+    }
+}
